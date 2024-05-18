@@ -29,4 +29,4 @@ cd Travel-Destination-Recommender-System
 pip install -r requirements.txt
 
 # Run the application
-python app.py
+python3 app.py
