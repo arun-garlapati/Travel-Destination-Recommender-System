@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <style>
+            .accordion > input[type="checkbox"] {
+                position: absolute;
+                left: -100vw;
+            }
+            .accordion .content {
+                overflow-y: hidden;
+                height: 0;
+                transition: height 0.3s ease;
+            }
+            .accordion > input[type="checkbox"]:checked ~ .content {
+                height: auto;
+                overflow: visible;
+            }
+            .accordion label {
+                display: block;
+            }
+            .accordion {
+                margin-bottom: 1em;
+            }
+            .accordion > input[type="checkbox"]:checked ~ .content {
+                padding: 15px;
+                border: 1px solid #e8e8e8;
+                border-top: 0;
+                height: 95rem;
+            }
+            .accordion .handle {
+                margin: 0;
+                font-size: 1.125em;
+                line-height: 1.2em;
+            }
+            .accordion label {
+                color: #333;
+                cursor: pointer;
+                font-weight: normal;
+                padding: 15px;
+                background: #e8e8e8;
+                border-radius: 10px;
+            }
+            .accordion label:hover,
+            .accordion label:focus {
+                background: #d8d8d8;
+            }
+            .accordion .handle label:before {
+                font-family: 'fontawesome';
+                content: "\f054";
+                display: inline-block;
+                margin-right: 25px;
+                font-size: .58em;
+                line-height: 1.556em;
+                vertical-align: middle;
+            }
+            .accordion > input[type="checkbox"]:checked ~ .handle label:before {
+                content: "\f078";
+            }
+        </style>
+        <section id="accordionContainer" class="accordion"></section>
+        <script>
+            async function loadData() {
+    try {
+        // Fetch restaurant data first
+        const resResponse = await fetch('/static/resturant.json');
+        const restaurantData = await resResponse.json();
+
+        // Then fetch attractions data
+        const attrResponse = await fetch('/static/attraction.json');
+        const attractionData = await attrResponse.json();
+
+        // Process each date with the restaurant data available
+        attractionData.datelist.forEach((date, index) => {
+            const section = document.createElement('section');
+            section.classList.add('accordion');
+            const input = document.createElement('input');
+            input.setAttribute('type', 'checkbox');
+            input.setAttribute('id', 'handle' + (index + 1));
+            section.appendChild(input);
+
+            const h2 = document.createElement('h2');
+            h2.classList.add('handle');
+            const label = document.createElement('label');
+            label.setAttribute('for', 'handle' + (index + 1));
+            label.textContent = new Date(date).toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            h2.appendChild(label);
+            section.appendChild(h2);
+
+            // Find matching tour data for the current date
+            const tourData = attractionData.date_data.filter(item => item.date === date);
+
+            // Retrieve restaurant entries for the current date
+            const restaurantEntries = restaurantData[date] || [];  // Use empty array if no data for the date
+
+            tourData.forEach((tour, idx) => {
+                const container = document.createElement('div');
+                container.classList.add('container');
+                container.style.maxWidth = '43rem';
+                container.style.height = '10rem';
+                container.style.backgroundColor = '#f3f9f7';
+                container.style.padding = '1rem';
+                container.style.borderRadius = '0.5rem';
+                container.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+                container.style.marginBottom = '2rem';
+                container.style.position = 'relative';
+                container.style.top = '1rem';
+                container.style.display = 'none';  // Initially hide the container
+
+                const title = document.createElement('h2');
+                title.textContent = tour.name;
+                title.style.fontSize = '1.125rem';
+                title.style.fontWeight = '600';
+                title.style.position = 'relative';
+                title.style.bottom = '15px';
+                title.style.wordWrap = 'break-word';
+                container.appendChild(title);
+
+
+                // Append restaurant info if available
+                restaurantEntries.forEach(restaurant => {
+                    const restInfo = document.createElement('p');
+                    restInfo.textContent = "Restaurant Name: " + restaurant.name + ", Specialties: " + restaurant.categories;
+                    container.appendChild(restInfo);
+                });
+
+                section.appendChild(container);
+            });
+
+            input.addEventListener('change', function() {
+                const containers = this.parentElement.querySelectorAll('.container');
+                containers.forEach(container => {
+                    container.style.display = this.checked ? 'block' : 'none';
+                });
+            });
+
+            document.getElementById('accordionContainer').appendChild(section);
+        });
+    } catch (error) {
+        console.error('Error fetching JSON:', error);
+    }
+}
+
+            loadData();
+        </script>
+    </div>
+</body>
+</html>

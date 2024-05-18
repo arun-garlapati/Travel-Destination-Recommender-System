@@ -1,0 +1,34 @@
+{
+  "trips": [
+    {
+      "destination": "Goa, India",
+      "image": "./newtrip/1 (2).webp",
+      "duration": "05 May 2024 - 3 Days"
+    },
+    {
+      "destination": "Goa, India",
+      "image": "./newtrip/2 (2).jpg",
+      "duration": "04 May 2024 - 2 Days"
+    },
+    {
+      "destination": "Goa, India",
+      "image": "./newtrip/3 (2).jpg",
+      "duration": "04 May 2024 - 3 Days"
+    },
+    {
+      "destination": "Goa, India",
+      "image": "./newtrip/4.avif",
+      "duration": "04 May 2024 - 3 Days"
+    },
+    {
+      "destination": "Goa, India",
+      "image": "./newtrip/5 (2).jpg",
+      "duration": "04 May 2024 - 3 Days"
+    },
+    {
+      "destination": "Goa, India",
+      "image": "./newtrip/6.jpg",
+      "duration": "04 May 2024 - 2 Days"
+    }
+  ]
+}

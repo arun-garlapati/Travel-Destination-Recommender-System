@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="/static/_next/static/css/273cbff98c428556.css"
+      crossorigin=""
+      data-precedence="next"
+    />
+    <link rel="stylesheet" href="/static/styles.css"/>
+    <title>Bon Voyage: Free &amp; Customizable Travel Itinerary App</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script src="/static/scripts.js"></script>
+      <link
+                 rel="stylesheet"
+                 href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+               />
+
+               <!-- Flatpickr JavaScript -->
+               <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <div
+      class="fixed top-0 flex w-full items-center justify-center border-b border-gray-200 bg-white shadow-sm z-50 transition-all"
+      style="background-color: #e0f5f0"
+    >
+      <div
+        class="mx-5 flex h-14 w-full max-w-screen-xl items-center justify-between md:h-16"
+      >
+        <div class="flex gap-5">
+          <a class="font-display flex items-center text-2xl" href="http://localhost:5173/">
+            <img
+              alt="Bon Voyage Logo"
+              loading="lazy"
+              width="29"
+              height="29"
+              decoding="async"
+              data-nimg="1"
+              class="mr-2 rounded-sm"
+              style="color: transparent"
+              src="/static/assets/img/logo.png"
+            />
+            <h1 class="text-base/7 font-medium md:text-xl/8">
+              Bon Voyage
+            </h1>
+          </a>
+          <a
+            class="cursor-pointer rounded-full px-4 py-1.5 hover:bg-gray-100 hidden md:block"
+            href="public-trips"
+            >Community Trips</a
+          >
+        </div>
+        <ul class="ml-5 flex gap-2">
+          <li
+            class="cursor-pointer rounded-full px-4 py-1.5 hover:bg-gray-100 hidden"
+          >
+            <a href="public-trips">Community Trips</a>
+          </li>
+          <li>
+            <div class="flex items-center justify-center">
+              <span
+                class="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-1y7dxwn"
+                style="width: 32px; height: 32px"
+              ></span>
+            </div>
+          </li>
+        </ul>
+        <button
+          class="h-fit cursor-pointer rounded-full px-4 py-1.5 text-sm transition-colors md:text-base text-white "
+        >
+          
+        </button>
+      </div>
+    </div>
+
+    <!-- MIDDLE PAGE -->
+
+    <div class="middle">
+      <main>
+        <div>
+          <h1
+              style="position: relative; top: 50px; font-size: 30px; text-align: center;"
+              >
+          FIND YOUR PERFECT ADVENTURE
+          </h1>
+        </div>
+        <form action="/new_trip" method="POST">
+          <div style="position: relative; top: 115px; left: 34%;">
+            <p>Where do you want to go?</p>
+
+            <!-- PlaceHolder -->
+            <div class="relative w-full" style="position: relative; right: 0px; top: 10px; cursor: pointer; width: 32%; border-radius: 10;  font-size: 16px; box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05); outline: none; border: none;">
+              <input name="city"
+                class="w-full rounded-md border border-solid border-gray-300 bg-white !outline-none transition-colors hover:border-gray-400 focus:border-gray-500 data-hj-allow outline-none"
+                id="use-autocomplete-demo"
+                aria-autocomplete="list"
+                aria-expanded="false"
+                autocomplete="off"
+                autocapitalize="none"
+                spellcheck="false"
+                role="combobox"
+                placeholder="Select a city"
+                required=""
+                data-hj-allow="true"
+                value=""
+              />
+              <ul id="city-dropdown" class="absolute z-20 w-full mt-1 bg-white rounded-md hidden " style="position: relative; top: 5px;">
+
+                <li class="px-4 py-2 cursor-pointer hover:bg-gray-100">Toronto</li>
+                <li class="px-4 py-2 cursor-pointer hover:bg-gray-100">Ontario</li>
+                <li class="px-4 py-2 cursor-pointer hover:bg-gray-100">Montreal</li>
+                <li class="px-4 py-2 cursor-pointer hover:bg-gray-100">Alberta</li>
+                <li class="px-4 py-2 cursor-pointer hover:bg-gray-100">British Columbia</li>
+                <li class="px-4 py-2 cursor-pointer hover:bg-gray-100">Nova Scotia</li>
+
+              </ul>
+            </div>
+
+            <!-- Date & Calender -->
+            <div>
+              <!-- Flatpickr CSS -->
+            
+              <p style="position: relative; left: 0%; top: 20px;">Choose our dates</p>
+              <button id="calendarButton" type="button" aria-haspopup="dialog" aria-expanded="false"
+                aria-controls="radix-:R2mdeulsta:" data-state="closed" style="position: relative; top: 30px;">
+                <div id="selectDatesSection"
+                  class="h-fit hover:bg-gray-100 rounded-md py-1.5 px-2 md:px-2.5 flex items-center gap-2 border border-solid bg-white border-gray-300 cursor-pointer group text-sm transition-all md:text-base">
+                  <div class="grid h-6 w-6 place-items-center gap-2 rounded-full bg-gray-200 group-hover:bg-gray-300 md:h-7 md:w-7">
+                    <img src="/static/assets/newtimg/calender.png">
+                    <span></span>
+                  </div>
+                  <span id="selectedDatesText" class="whitespace-nowrap">Select dates</span>
+                </div>
+              </button>
+              <input type="hidden" id="selectedDatesInput" name="dates">
+            
+              <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  var calendarButton = document.getElementById("calendarButton");
+                  var selectedDatesText = document.getElementById("selectedDatesText");
+                  var selectedDatesInput = document.getElementById("selectedDatesInput");
+
+                  // Initialize Flatpickr
+                  var calendar = flatpickr(calendarButton, {
+                    enableTime: false, // Whether to enable time selection
+                    dateFormat: "Y-m-d", // Date format
+                    showMonths: 2, // Show two months at once
+                    minDate: "today", // Minimum selectable date (today)
+                    maxDate: "+10d", // Maximum selectable date (today + 10 days)
+                    defaultDate: "today", // Default starting date (today)
+                    mode: "range", // Allow selecting a range of dates
+                    // Add more configuration options as needed
+                    onChange: function (selectedDates, dateStr, instance) {
+                      if (selectedDates.length > 0) {
+                        selectedDatesInput.value = dateStr; // Update the hidden input with selected dates
+                        selectedDatesText.textContent = dateStr; // Update the displayed text with selected dates
+                        var duration = selectedDates.length - 1; // Calculate duration (number of selected days minus one)
+                        var endDate = new Date(selectedDates[0]); // Initialize end date with the selected start date
+                        endDate.setDate(endDate.getDate() + duration); // Add the duration to get the end date
+                        var endDateStr = endDate.toISOString().split('T')[0]; // Format the end date
+
+                        // Update the text with the selected dates
+                        selectedDatesText.textContent = dateStr;
+
+                        // Update the maxDate dynamically based on the selected start date and duration
+                        calendar.set('maxDate', '+' + duration + 'd');
+                      } else {
+                        // If no date is selected, revert to the default text and maxDate
+                        selectedDatesText.textContent = "Select dates";
+                        calendar.set('maxDate', '+10d'); // Reset maxDate to default
+                        selectedDatesInput.value = "";
+                      }
+                    },
+                  });
+
+                  // Prevent the button from submitting the form
+                  calendarButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                  });
+                });
+              </script>
+            
+            </div>
+
+
+            <!-- Add Destination -->
+            <div>
+              <!-- <button
+              id="destinationButton"
+              class="flex items-center gap-1.5 rounded-lg bg-accent-red px-3 py-1.5 text-sm text-white transition-colors hover:bg-accent-red-2 md:ml-1.5"
+              style="position: relative; left: 434px; bottom: 0px; padding: 10px;"
+          >
+              <img src="destination.webp" 0alt="Destination Image" style="width: 25px; height: 20px;">
+              <span></span>Add destination
+          </button> -->
+            </div>
+
+
+            <!-- Kind of activities -->
+            <div>
+              <input type="hidden" id="selectedActivitiesInput" name="activities">
+
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
+
+              <label for="city" style="position:relative; top: 55px;">Select the kind of activities you want to do</label>
+
+              <div class="container">
+                <div class="select-btn">
+                    <span class="btn-text">Select</span>
+                    <span class="arrow-dwn">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </div>
+                <ul class="list-items">
+                  <li class="item">
+                    <span class="checkbox">
+                        <i class="fa-solid fa-check check-icon"></i>
+                    </span>
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="child-reaching" class="svg-inline--fa fa-child-reaching mb-0.5 text-base transition-all text-gray-900" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="25" height="15">
+                      <path fill="currentColor" d="M256 64A64 64 0 1 0 128 64a64 64 0 1 0 128 0zM152.9 169.3c-23.7-8.4-44.5-24.3-58.8-45.8L74.6 94.2C64.8 79.5 45 75.6 30.2 85.4s-18.7 29.7-8.9 44.4L40.9 159c18.1 27.1 42.8 48.4 71.1 62.4V480c0 17.7 14.3 32 32 32s32-14.3 32-32V384h32v96c0 17.7 14.3 32 32 32s32-14.3 32-32V221.6c29.1-14.2 54.4-36.2 72.7-64.2l18.2-27.9c9.6-14.8 5.4-34.6-9.4-44.3s-34.6-5.5-44.3 9.4L291 122.4c-21.8 33.4-58.9 53.6-98.8 53.6c-12.6 0-24.9-2-36.6-5.8c-.9-.3-1.8-.7-2.7-.9z"></path></svg>
+                    <span class="item-text">Family Friendly</span>
+                </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="child-reaching" class="svg-inline--fa fa-child-reaching mb-0.5 text-base transition-all text-gray-900" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="25" height="15"><path fill="currentColor" d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path></svg>
+                        <span class="item-text">Recommended Experiences</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="child-reaching" class="svg-inline--fa fa-child-reaching mb-0.5 text-base transition-all text-gray-900" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="25" height="15"><path fill="currentColor" d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"></path></svg>
+                        <span class="item-text">Tour & Sightseeing</span>
+                    </li>
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="child-reaching" class="svg-inline--fa fa-child-reaching mb-0.5 text-base transition-all text-gray-900" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="25" height="15"><path fill="currentColor" d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"></path></svg>
+                        <span class="item-text">Cruises & Water Tours</span>
+                    </li>
+
+                    <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="child-reaching" class="svg-inline--fa fa-child-reaching mb-0.5 text-base transition-all text-gray-900" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="25" height="15"><path fill="currentColor" d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"></path></svg>
+                        <span class="item-text">Cultural & Theme Tours</span>
+                    </li>
+
+                     <li class="item">
+                        <span class="checkbox">
+                            <i class="fa-solid fa-check check-icon"></i>
+                        </span>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="child-reaching" class="svg-inline--fa fa-child-reaching mb-0.5 text-base transition-all text-gray-900" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="25" height="15"><path fill="currentColor" d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"></path></svg>
+                        <span class="item-text">Outdoor Activities</span>
+                    </li>
+
+                </ul>
+            </div>
+            <script>
+ // Function to update hidden input field with selected activities
+ function updateSelectedActivities() {
+        var selectedActivities = [];
+        // Loop through all list items to find selected activities
+        document.querySelectorAll('.item').forEach(function(item) {
+            if (item.classList.contains('selected')) {
+                selectedActivities.push(item.querySelector('.item-text').textContent.trim());
+            }
+        });
+        // Update hidden input field value with selected activities
+        document.getElementById('selectedActivitiesInput').value = selectedActivities.join(',');
+    }
+
+    // Event listener for toggling selection of items
+    document.querySelectorAll('.item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            this.classList.toggle('selected');
+            updateSelectedActivities(); // Update selected activities when item is clicked
+        });
+    });
+</script>
+            </div>
+            
+            <!-- People -->
+            <div>
+              <input type="hidden" id="selectedperson" name="person">
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
+
+              <label for="city" style="position:relative; top: 80px;">How many people are going?</label>
+
+              <div id="counterContainer" class="flex items-center justify-center p-4" style="position: relative; top: 80px; right: 870px;">
+                <div class="flex items-center border border-zinc-300 rounded-lg overflow-hidden" style="background-color: #fff;">
+                  <div id="countDisplay" class="bg-green-200 p-2">
+                    <span id="count" class="text-green-800 text-sm font-semibold">1</span>
+                  </div>
+                  <span class="px-3">Person</span>
+                  <button id="decreaseBtn" class="border-l border-zinc-300 p-2 focus:outline-none hover:bg-zinc-100 bg-green-200" style="border-radius: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"  d="M18 12H6" />
+                    </svg>
+                  </button>
+                  <button id="increaseBtn" class="border-l border-zinc-300 p-2 focus:outline-none hover:bg-zinc-100 bg-green-200" style="border-radius: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                  </button>
+                  
+                </div>
+              </div>
+              <script>
+                // Assuming you have a function to handle the selection/deselection of persons
+function updateSelectedPersonCount(count) {
+    document.getElementById('count').textContent = count;
+    document.getElementById('selectedperson').value = count; // Update the hidden input value
+}
+
+// Function to handle the increase button click
+document.getElementById('increaseBtn').addEventListener('click', function() {
+    var count = parseInt(document.getElementById('count').textContent);
+    count++;
+    updateSelectedPersonCount(count);
+});
+
+// Function to handle the decrease button click
+document.getElementById('decreaseBtn').addEventListener('click', function() {
+    var count = parseInt(document.getElementById('count').textContent);
+    if (count > 1) {
+        count--;
+        updateSelectedPersonCount(count);
+    }
+});
+
+                </script>
+            </div>
+
+            <!-- New Trip -->
+            <div>
+              <div class="flex items-center justify-center"
+                style="position: relative; right: 35%; padding: 10px; height: 38px; top: 150px">
+                  <button
+                    type="submit"
+                    class="mt-8 w-fit items-center rounded-full bg-accent-red px-6 py-2 text-white transition-colors hover:bg-accent-red-2 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-gray-500"
+                  >
+                    <a>Create New Trip</a>
+                  </button>
+                </div>
+
+              <p class="mt-5 text-center text-sm text-gray-600 opacity-75"
+              style="position: relative; left: -34%; padding: 10px; height: 38px; top: 160px;">
+                By clicking Create New Trip, you agree to our<!-- -->
+                <a class="text-green-700 hover:underline" href="terms"
+                  >Terms and Conditions</a
+                >
+                <!-- -->and<!-- -->
+                <a class="text-green-700 hover:underline" href="privacy"
+                  >Privacy Policy</a
+                >.
+              </p>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+
+
+    <div class="flex flex-col">
+      <main class="mb-12 w-full flex-grow">
+        <div class="pt-10">
+          <div class="flex w-full items-start justify-end gap-2 px-4 md:px-12">
+            <div class="mx-auto">
+              <!-- <h1 class="mt-5 text-center text-2xl md:mt-12 md:text-3xl" style="position: relative; top: 0px; right: 42px;">
+                <b>FIND YOUR PERFECT ADVENTURE</b>
+              </h1> -->
+              <form class="mt-12 flex w-full max-w-xl flex-col gap-14">
+                <div>
+                  <!-- <p class="" style="position: relative; right: 0px; bottom: 20px; font-size: 20px;">
+                    Where do you want to go?
+                  </p> -->
+                  <div>
+                    <div class="text-base md:text-lg"></div>
+                    <div>
+                      <div
+                        class="relative flex md:gap-3 flex-col items-start gap-2"
+                      >
+                        <div
+                          class="__variable_d37563 w-full max-w-xl rounded-md"
+                        >
+
+                          <!-- Placeholder -->
+
+
+                        </div>
+<br><br><br><br><br><br><br><br>
+                        <!-- Flatpickr CSS -->
+                        <link
+                          rel="stylesheet"
+                          href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+                        />
+
+
+
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+    </form>
+            </div>
+
+
+              </div>
+                 </form>
+                 </div>
+                 </div>
+        </div>
+        </main>
+        </div>
+
+         <!-- <script>
+          document.addEventListener('DOMContentLoaded', function () {
+  var form = document.querySelector('form');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Gather data from form fields
+    var city = document.querySelector('input[name="city"]').value;
+    var dates = document.getElementById('selectedDatesText').textContent;
+    var activities = []; // Gather activities data here
+    var peopleCount = document.getElementById('count').textContent;
+
+    // Construct JSON object
+    var formData = {
+      city: city,
+      dates: dates,
+      activities: activities,
+      peopleCount: peopleCount
+    };
+
+    // Convert JSON object to string
+    var formDataString = JSON.stringify(formData);
+
+    // Store or send formDataString as needed (e.g., store in local storage)
+    localStorage.setItem('formData', formDataString);
+
+    // Redirect to another page or load data on the same page as needed
+    // window.location.href = 'another-page.html'; // Change the URL as needed
+  });
+});
+        </script> -->
+        
+
+    <footer
+      class="footer absolute w-full border-t border-solid border-gray-300 px-4 pt-10 text-center md:pt-8 lg:pt-14"
+    style="position: absolute; left: 0px;"
+    >
+      <div
+        class="mx-auto flex max-w-screen-xl flex-wrap justify-center gap-12 md:justify-between"
+      >
+        <div>
+          <div class="flex justify-center gap-3 md:justify-start">
+            <img
+              alt="logo"
+              loading="lazy"
+              width="20"
+              height="20"
+              decoding="async"
+              data-nimg="1"
+              class="h-9 w-9 items-center"
+              style="color: transparent"
+              src="/static/assets/img/logo.png"
+            />
+            <h1 class="text-2xl/10 font-medium">Bon Voyage</h1>
+          </div>
+          <div class="mt-4 flex flex-col gap-5">
+            <p class="max-w-[23rem] text-center text-gray-600 md:text-start">
+              Turn your next trip into a hassle-free experience with Trip
+              Planner AI.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-12 xl:grid-cols-3">
+          <ul class="flex flex-col gap-3">
+            <li class="font-bold">Legal</li>
+            <li>
+              <a
+                class="hover:underline"
+                target="_blank"
+                href="src\newtrip\terms.html"
+                >Terms and Conditions</a
+              >
+            </li>
+            <li>
+              <a
+                class="hover:underline"
+                target="_blank"
+                href="src\newtrip\privacy.html"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+          <ul class="flex flex-col gap-3">
+            <li class="font-bold">Support</li>
+            <li>
+              <a
+                href="mailto:hello@tripplanner.ai"
+                target="_blank"
+                rel="noreferrer"
+                class="hover:underline md:text-base"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://forms.gle/esjZuLyS9bX9pBpG9"
+                target="_blank"
+                rel="noreferrer"
+                class="hover:underline md:text-base"
+                >B2B Integrations</a
+              >
+            </li>
+          </ul>
+          <ul class="flex flex-col gap-3">
+            <li class="font-bold">Itineraries</li>
+            <li>
+              <a class="hover:underline" href="public-trips">Community Trips</a>
+            </li>
+            <li>
+              <a class="hover:underline" href="src\newtrip\destinations.html"
+                >Find Destinations</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="mx-auto mt-12 max-w-screen-xl border-t border-solid border-gray-300 py-7 text-center text-gray-600 md:text-start"
+      >
+        <p>© 2024 Bon Voyage. All rights reserved</p>
+      </div>
+
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+@font-face {
+  font-family: __font_d37563;
+  src: url(../media/d2b73733f3549d7d-s.p.ttf) format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: __font_d37563;
+  src: url(../media/85daf946281ea1d1-s.p.ttf) format("truetype");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: __font_Fallback_d37563;
+  src: local("Arial");
+  ascent-override: 75.56%;
+  descent-override: 21.45%;
+  line-gap-override: 9.33%;
+  size-adjust: 107.21%;
+}
+.__className_d37563 {
+  font-family: __font_d37563, __font_Fallback_d37563;
+}
+.__variable_d37563 {
+  --main-font: "__font_d37563", "__font_Fallback_d37563";
+}

@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /trips/
+
+Sitemap: https://tripplanner.ai/sitemap.xml

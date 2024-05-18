@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link
+      rel="stylesheet"
+      href="/static/_next/static/css/273cbff98c428556.css"
+      crossorigin=""
+      data-precedence="next"
+    />
+    <title>Trip Planner AI: Free &amp; Customizable Travel Itinerary App</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #e0f5f0;
+            font-family: Poppins, sans-serif;
+            
+        }
+  
+        #city-dropdown.visible {
+      opacity: 1;
+      transform: scale(1);
+  }
+        </style> */
+    </head>
+
+    <body>
+  
+      <!-- NAVBAR -->
+      <div
+        class="fixed top-0 flex w-full items-center justify-center border-b border-gray-200 bg-white shadow-sm z-50 transition-all"
+        style="background-color: #e0f5f0"
+      >
+        <div
+          class="mx-5 flex h-14 w-full max-w-screen-xl items-center justify-between md:h-16"
+        >
+          <div class="flex gap-5">
+            <a class="font-display flex items-center text-2xl" href="http://localhost:5173/">
+              <img
+                alt="Trip Planner AI Logo"
+                loading="lazy"
+                width="29"
+                height="29"
+                decoding="async"
+                data-nimg="1"
+                class="mr-2 rounded-sm"
+                style="color: transparent"
+                srcset="
+                  _next/image@url=%252Flogo%252Flogo.webp&amp;w=32&amp;q=75amp;q_next/image@url=%252Flogo%252Flogo.webp&amp;w=64&amp;q=75mp;w=64&amp;q=75 2x
+                "
+                src="/static/assets/img/logo.png"
+              />
+              <h1 class="text-base/7 font-medium md:text-xl/8">
+                Trip Planner AI
+              </h1>
+            </a>
+            <a
+              class="cursor-pointer rounded-full px-4 py-1.5 hover:bg-gray-100 hidden md:block"
+              href="public-trips"
+              >Community Trips</a
+            >
+          </div>
+          <ul class="ml-5 flex gap-2">
+            <li
+              class="cursor-pointer rounded-full px-4 py-1.5 hover:bg-gray-100 hidden"
+            >
+              <a href="public-trips">Community Trips</a>
+            </li>
+            <li>
+              <div class="flex items-center justify-center">
+                <span
+                  class="MuiSkeleton-root MuiSkeleton-circular MuiSkeleton-pulse css-1y7dxwn"
+                  style="width: 32px; height: 32px"
+                ></span>
+              </div>
+            </li>
+          </ul>
+          <button
+            class="h-fit cursor-pointer rounded-full bg-accent-red px-4 py-1.5 text-sm transition-colors md:text-base text-white hover:bg-accent-red-2"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+      
+
+      <!-- Middle Page -->
+      <div>
+        <main>
+          <div>
+            <h1
+                style="position: relative; top: 80px; font-size: 30px; text-align: center; right: 20%;"
+                >
+            Your Trips
+            </h1>
+          </div>
+          <div>
+            <button
+                id="destinationButton"
+                class="flex items-center gap-1.5 rounded-lg bg-accent-red px-3 py-1.5 text-sm text-white transition-colors hover:bg-accent-red-2 md:ml-1.5"
+                style="position: relative; left: 74%; top: 40px; padding: 10px;"
+            >
+                <img src="/static/images/newtimg/destination.webp" 0alt="Destination Image" style="width: 25px; height: 20px;">
+                <span></span>Add Trip
+            </button>
+
+            
+          </div>
+          
+        </main>
+
+        <!-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="./newtrip/1 (2).webp" alt="Goa, India" class="w-full h-48 object-cover">
+                  <div class="p-4">
+                      <h5 class="text-lg font-semibold">Goa, India</h5>
+                      <p class="text-zinc-500">05 May 2024 - 3 Days</p>
+                  </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="./newtrip/2 (2).jpg" alt="Goa, India" class="w-full h-48 object-cover">
+                  <div class="p-4">
+                      <h5 class="text-lg font-semibold">Goa, India</h5>
+                      <p class="text-zinc-500">04 May 2024 - 2 Days</p>
+                  </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="./newtrip/3 (2).jpg" alt="Goa, India" class="w-full h-48 object-cover">
+                  <div class="p-4">
+                      <h5 class="text-lg font-semibold">Goa, India</h5>
+                      <p class="text-zinc-500">04 May 2024 - 3 Days</p>
+                  </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="./newtrip/4.avif" alt="Goa, India" class="w-full h-48 object-cover">
+                  <div class="p-4">
+                      <h5 class="text-lg font-semibold">Goa, India</h5>
+                      <p class="text-zinc-500">04 May 2024 - 3 Days</p>
+                  </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="./newtrip/5 (2).jpg" alt="Goa, India" class="w-full h-48 object-cover">
+                  <div class="p-4">
+                      <h5 class="text-lg font-semibold">Goa, India</h5>
+                      <p class="text-zinc-500">04 May 2024 - 3 Days</p>
+                  </div>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="./newtrip/6.jpg" alt="Goa, India" class="w-full h-48 object-cover">
+                  <div class="p-4">
+                      <h5 class="text-lg font-semibold">Goa, India</h5>
+                      <p class="text-zinc-500">04 May 2024 - 2 Days</p>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+
+      <div>
+        <style>
+          .trip-box {
+          background-color: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          margin-bottom: 20px; /* Add some margin between trip boxes */
+          width: 230px;
+          height: 260px;
+        }
+        
+        .trip-box img {
+  width: 100%;
+  height: 60%; /* Adjust the height as needed */
+  object-fit: cover;
+  object-position: center; /* Center the image within the container */
+}
+        .trip-box .p-4 {
+          padding: 1.5rem;
+        }
+        
+        .trip-box h5 {
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+        
+        .trip-box .text-zinc-500 {
+          color: #676767;
+        }
+        
+        </style>
+
+<div id="tripContainer" style="display: flex; flex-wrap: wrap; gap: 5%; position: relative; left: 560px; top: 85px; width: calc(50% - 2.5%);">
+        
+          <script>
+            // Function to fetch JSON data from file
+  function fetchJSONFile(path, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          callback(JSON.parse(xhr.responseText));
+        } else {
+          console.error("Failed to fetch JSON data from " + path);
+        }
+      }
+    };
+    xhr.open("GET", path, true);
+    xhr.send();
+  }
+  
+  
+  // Function to populate trips
+  function populateTrips(tripsData) {
+    var tripContainer = document.getElementById("tripContainer");
+  
+    tripsData.trips.forEach(function(trip) {
+      var tripElement = document.createElement("div");
+      tripElement.classList.add("trip-box"); // Add a class for styling
+  
+      var imageElement = document.createElement("img");
+      imageElement.src = trip.image;
+      imageElement.alt = trip.destination;
+      imageElement.classList.add("w-full", "h-48", "object-cover");
+  
+      var detailsElement = document.createElement("div");
+      detailsElement.classList.add("p-4");
+  
+      var titleElement = document.createElement("h5");
+      titleElement.classList.add("text-lg", "font-semibold");
+      titleElement.textContent = trip.destination;
+  
+      var durationElement = document.createElement("p");
+      durationElement.classList.add("text-zinc-500");
+      durationElement.textContent = trip.duration;
+  
+      detailsElement.appendChild(titleElement);
+      detailsElement.appendChild(durationElement);
+  
+      tripElement.appendChild(imageElement);
+      tripElement.appendChild(detailsElement);
+      
+      // Add event listener to redirect to map2.html when clicked
+    tripElement.addEventListener("click", function() {
+      window.location.href = "map2.html"; // Redirect to map2.html
+    });
+
+    
+      tripContainer.appendChild(tripElement);
+    });
+  }
+  
+  // Path to your JSON file
+  var jsonFilePath = "/static/addtrip.json";
+  
+  // Call function to fetch JSON data and populate trips
+  fetchJSONFile(jsonFilePath, populateTrips);
+  
+          </script>
+        </div>
+      </div>
+      
+      </div>
+
+
+          
+    <footer
+    class="absolute w-full border-t border-solid border-gray-300 px-4 pt-10 text-center md:pt-8 lg:pt-14"
+    style="position: relative; top: 500px;"
+  >
+    <div
+      class="mx-auto flex max-w-screen-xl flex-wrap justify-center gap-12 md:justify-between"
+    >
+      <div>
+        <div class="flex justify-center gap-3 md:justify-start">
+          <img
+            alt="logo"
+            loading="lazy"
+            width="20"
+            height="20"
+            decoding="async"
+            data-nimg="1"
+            class="h-9 w-9 items-center"
+            style="color: transparent"
+            srcset="
+              _next/image@url=%252Flogo%252Flogo.webp&amp;w=32&amp;q=75amp;q_next/image@url=%252Flogo%252Flogo.webp&amp;w=48&amp;q=75mp;w=48&amp;q=75 2x
+            "
+            src="/static/assets/img/logo.png"
+          />
+          <h1 class="text-2xl/10 font-medium">Trip Planner AI</h1>
+        </div>
+        <div class="mt-4 flex flex-col gap-5">
+          <p class="max-w-[23rem] text-center text-gray-600 md:text-start">
+            Turn your next trip into a hassle-free experience with Trip
+            Planner AI.
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-12 xl:grid-cols-3">
+        <ul class="flex flex-col gap-3">
+          <li class="font-bold">Legal</li>
+          <li>
+            <a
+              class="hover:underline"
+              target="_blank"
+              href="src\newtrip\terms.html"
+              >Terms and Conditions</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:underline"
+              target="_blank"
+              href="src\newtrip\privacy.html"
+              >Privacy Policy</a
+            >
+          </li>
+        </ul>
+        <ul class="flex flex-col gap-3">
+          <li class="font-bold">Support</li>
+          <li>
+            <a
+              href="mailto:hello@tripplanner.ai"
+              target="_blank"
+              rel="noreferrer"
+              class="hover:underline md:text-base"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://forms.gle/esjZuLyS9bX9pBpG9"
+              target="_blank"
+              rel="noreferrer"
+              class="hover:underline md:text-base"
+              >B2B Integrations</a
+            >
+          </li>
+        </ul>
+        <ul class="flex flex-col gap-3">
+          <li class="font-bold">Itineraries</li>
+          <li>
+            <a class="hover:underline" href="public-trips">Community Trips</a>
+          </li>
+          <li>
+            <a class="hover:underline" href="src\newtrip\destinations.html"
+              >Find Destinations</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="mx-auto mt-12 max-w-screen-xl border-t border-solid border-gray-300 py-7 text-center text-gray-600 md:text-start"
+    >
+      <p>© 2023 Trip Planner AI. All rights reserved</p>
+    </div>
+  </footer>
+
+ 
+</body>
+</html>

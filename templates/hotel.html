@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two Pages Side by Side</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqYx-DeSlI3zFJhrCav7sT5EMfKvgv5FI&libraries=places"></script>
+    <script src= 
+"https://code.jquery.com/jquery-3.5.1.js"> 
+    </script> 
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #e0f5f0;
+            font-family: Poppins, sans-serif;
+            /* overflow: auto; */
+        }
+      /* Define two columns */
+      .column1 {
+        float: left;
+        width: 50%; /* Adjust this width to your preference */
+        padding: 0px;
+        box-sizing: border-box;
+        /* overflow: hidden; */
+        /* background-color: aqua; */
+      }
+
+      .column2 {
+        position: fixed;
+        float: left;
+        width: 50%; /* Adjust this width to your preference */
+        padding: 10px;
+        box-sizing: border-box;
+        left: 50%;
+        /* background-color: aquamarine; */
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="column1">
+        <!-- Trip Planner -->
+          <div >
+            <div style="display: flex; align-items: center;">
+                <a style="color: #4b5563; cursor: pointer; position: relative; left: 20px; top: 3px;" href="new-trip.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </a>
+                <p style="font-weight: 500; font-size: 1.25rem; margin-left: 1.5rem; position: relative; left: 10px;">Bon Voyage</p>
+            </div>
+            <div style="max-width: 100%; margin: auto; margin-top: 1rem; position: relative; bottom: 15px;">
+              <div style="height: 5px; background-image: linear-gradient(to right, #86a7e5, #5d85ce, #3761ae); border-radius: 999px;"></div>
+          </div>
+          <h style="position: relative; bottom: 68px; left: 88%;"> Step 2 of 2</h>
+        </div>
+        
+
+        <!-- Loading-->
+        <div style="margin-left: 60px; margin-top: 10px;">
+          <!-- <h2 style="font-size: 25px;  margin-bottom: 0.5rem;">Meals preferences</h2>
+          
+          <p style="font-size: 17px; color: #4b5563;">Select the meals you would like to include in your trip, your budget for it and the type of food you prefer.</p> -->
+          <div class="max-w-4xl mx-auto px-4 py-8">
+            <div class="mb-8">
+                <h2 class="text-2xl font-semibold">Set your lodging (Optional)</h2>
+                <p class="text-zinc-600 mt-2">Add your lodging, and we'll craft the ideal route around your stay. Optimized adventures start at your doorstep! 🏠</p>
+            </div>
+            <!-- <div class="mb-12">
+                <label for="search" class="block text-lg font-medium text-zinc-700">Search your stay address or hotel name</label>
+                <div class="mt-1 relative rounded-md shadow-sm">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <span class="text-zinc-500 sm:text-sm">
+                            🏨
+                        </span>
+                    </div> -->
+                    <!-- <input type="text" name="search" id="search" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-zinc-300 rounded-md" placeholder="Search your stay address or hotel name"> -->
+                <!-- </div>
+            </div> -->
+            <br>
+            <!-- Hotel picks -->
+            <div>
+                <h3 class="text-xl font-semibold">Top Hotel Picks Just For You! ✨</h3>
+                <p class="text-zinc-600 mt-2">We've picked hotels that minimize your commute and maximize your sightseeing. Enjoy a hassle-free stay! 🤩</p>
+            </div>
+        </div>
+      </div>
+      
+        
+        <!-- Budget level -->
+        <div style="position: relative; left: 60px; top: 40px;">
+          <!-- <h3 style="font-size: 20px; margin-bottom: 0.25rem;">Budget level</h3>
+          <p style="font-size: 17px; color: #4b5563; margin-bottom: 0.5rem;">Depending on the budget level, we will select least or more expensive restaurants.</p>
+          <div style="margin-top: 3rem; margin-left: 1rem;">
+              <input id="budgetRange" type="range" min="1" max="3" class="w-xl h-2 bg-gray-400 cursor-pointer dark:bg-gray-700" style="width: 400px;">
+              <div style="display: flex; justify-content: space-evenly; font-size: small; margin-top: 0.5rem; position: relative; right: 25%;">
+                  <span style="position: relative; left: 8px;">Cheap</span>
+                  <span style="position: relative; right: 30px;">Mid </span>
+                  <span style="position: relative; right: 75px;">High</span>
+              </div>
+          </div> -->
+          <div class="max-w-lg mx-auto p-4 border border-zinc-300 rounded-lg shadow-md" style="border: 1px solid; border-radius: 10px; height: 250px; width: 92%;">
+            <div class="flex">
+                
+                <img src="/static/images/newtimg/hotele.jpg" alt="Hostel" style="width: 160px; height: 210px; border-radius: 10px; position: relative; top: 20px; left: 20px;">
+            </div>
+        
+            <div>
+                <div class="flex flex-col justify-between flex-grow">
+                    
+                    <div style="position: relative; bottom: 200px; left: 210px; ">
+                        <h2 class="text-lg font-semibold" style="font-size: 18px;">(Private) goSTOPS Goa Vagator - Rooms & Dorms</h2>
+                        <p class="text-sm text-zinc-600" style="font-size: 15px; position: relative; bottom: 10px;">H.No - 153/6/7/8, Zhor Waddo</p>
+                        <div class="text-sm font-medium bg-gray-200 p-2 rounded-lg" style="position: relative; top: 80px;"> <!-- Added div with styling -->
+                            <p class="text-sm font-medium">Best possible location 🎉 😍</p>
+                        </div>
+                        
+                    </div>
+        
+                    
+                    <div class="flex items-center text-sm text-zinc-700 space-x-2 mt-2" style="position: relative; bottom:220px; left: 210px;">
+                        <span>🏨 hostel</span>
+                        <br>
+                        <span>✅ Free cancellation</span>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+            <div class="flex justify-between items-center mt-4" style="position: relative; bottom: 330px; left: 650px;">
+                <div class="flex items-center space-x-2" style="position: relative; bottom: 1px; left: 100px;">
+                    <span class="text-lg font-semibold">8.5</span>
+                    <br>
+                    
+                    <span class="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded">Very good</span>
+                    
+                </div>
+                <div style="position: relative; top: 50px; left: 100px;">
+                    <div class="text-right text-lg font-semibold" >$90.3 / night</div>
+                    <div class="text-right text-sm text-zinc-500">3 nights, 1 adult</div>
+                </div>
+            </div>
+        
+            
+            </div>
+      </div>
+
+
+
+      <br><br><br>
+      <!-- Meals Include -->
+      <!-- <div style="position: relative; left: 60px; top: 0px;">
+        <h3 style="font-size: 20px;  margin-bottom: 0.5rem;">Meals to include</h3>
+        <p style="font-size: 17px; color: #4b5563; margin-bottom: 1rem;">Prices are an estimate of each meal for 3 days 1 person</p>
+          <br>
+          
+          
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-right: 140px;">
+            <div style="border: 2px solid #e2e8f0; border-radius: 1.375rem; padding: 1rem; max-width: 20rem; display: flex; justify-content: space-between; align-items: center; position: relative; right: 70px; width: 180px;">
+                <div>
+                    <input type="checkbox" id="breakfast" class="mr-2">
+                    <label for="breakfast" style="font-weight: 600;">Breakfast</label>
+                    <p style="font-size: 14px; color: #4b5563;">($3 per meal)</p>
+                </div>
+                <div>
+                    <span style="font-weight: 600; position: relative; bottom: 10px;">$8</span>
+                </div>
+            </div>
+    
+            <div style="border: 2px solid #e2e8f0; border-radius: 1.375rem; padding: 1rem; max-width: 20rem; display: flex; justify-content: space-between; align-items: center; position: relative; right: 70px; width: 180px;">
+                <div>
+                    <input type="checkbox" id="lunch" class="mr-2">
+                    <label for="lunch" style="font-weight: 600;">Lunch</label>
+                    <p style="font-size: 14px; color: #4b5563;">($4 per meal)</p>
+                </div>
+                <div>
+                    <span style="font-weight: 600; position: relative; bottom: 10px;">$13</span>
+                </div>
+            </div>
+    
+            <div style="border: 2px solid #e2e8f0; border-radius: 1.375rem; padding: 1rem; max-width: 20rem; display: flex; justify-content: space-between; align-items: center; position: relative; right: 70px; width: 180px;">
+                <div>
+                    <input type="checkbox" id="dinner" class="mr-2">
+                    <label for="dinner" style="font-weight: 600;">Dinner</label>
+                    <p style="font-size: 14px; color: #4b5563;">($3 per meal)</p>
+                </div>
+                <div>
+                    <span style="font-weight: 600; position: relative; bottom: 10px;">$8</span>
+                </div>
+            </div>
+        </div>
+    </div>
+         -->
+
+        <!-- Next Button -->
+        <div>
+            <style>
+              .button {
+                /* background-color: black; */
+                color: rgb(0, 0, 0);
+                padding: 10px 20px;
+                border-radius: 20px;
+                /* border: 2px solid white; */
+                cursor: pointer;
+                position: absolute;
+                left: 44%;
+                top: 90%;
+              }
+              .button:hover {
+                background-color: #f7f0f0;
+                color: black;
+              }
+            </style>
+            <a href="./map2.html" class="button">Next →</a>
+        </div>
+      </div>
+      
+      
+      <div class="column2">
+        <body onload="initMap()">
+            <h1 class="text-center"></h1>
+             
+            <div class="container">
+                
+                <div id="map" style="height: 910px; width:102%; left: -1%; top:-32px;"></div>
+        
+            </div>
+            <!-- <button onclick="calcRoute()"></button> -->
+            <script>
+        
+           
+        function initMap() {
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 16,
+        center: { lat: 37.9715285, lng: 23.7267166 }, // Center the map on one of the coordinates
+    });
+
+fetch('/static/map.json')
+        .then(response => response.json())
+        .then(data => {
+            // Iterate through JSON data
+            const coordinates = data;
+            // Add markers with labels and info windows
+            coordinates.forEach(info => createMarker(info, map));
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+function createMarker(info, map) {
+    // Define colors for different days
+    const singleColor = "#3366cc";
+
+    // Create the marker with custom SVG icon
+    var customMarker = new google.maps.Marker({
+        position: { lat: info.lat, lng: info.lng },
+        map: map,
+        icon: {
+            url:
+                "data:image/svg+xml;charset=UTF-8," +
+                encodeURIComponent(
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="' +
+                    singleColor +
+                    '" width="48px" height="48px">' +
+                    '<path d="M12 0c-4.4 0-8 3.6-8 8 0 7 8 16 8 16s8-9 8-16c0-4.4-3.6-8-8-8zm0 11.5c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"/>' +
+'<path d="M18 9v7h-2V9H8V7h8l2-2"/>' + // A simple rectangle shape representing a save icon
+'<text x="12" y="15.5" font-size="12" text-anchor="middle">&#x1F3E8;</text>' + // Hotel emoji
+"</svg>"
+
+                ),
+            scaledSize: new google.maps.Size(25, 25), // Set the size of the icon
+            origin: new google.maps.Point(0, 0), // Set the origin point
+            anchor: new google.maps.Point(12, 40), // Set the anchor point
+        },
+    });
+
+    // Info window content
+    var contentString = "Cluster: " + info.cluster + ", Days: " + info.days;
+
+    // Info window
+    var infowindow = new google.maps.InfoWindow({
+        content:
+            "<div>" +
+            "<h5>" +
+            info.name +
+            "</h5>" +
+            "<p>Day: " +
+            info.days +
+            "</p>" +
+            "</div>",
+    });
+
+    // Add click event listener to marker
+    customMarker.addListener("click", function () {
+        infowindow.open(map, customMarker);
+    });
+}
+
+        </script>
+        </body>
+      </div>
+    </div>
+  </body>
+</html>

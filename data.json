@@ -1,0 +1,38 @@
+{
+    "City": "Paris",
+    "start_date" : "2024-05-01",
+    "end_date" : "2024-05-05",
+    "iternary":
+    [
+        {
+            "date": "2024-05-01",
+            "attraction": ["A", "B", "C", "D"],
+            "resturent": [{"breakfast" : ["resturent A", "resturent B", "resturent C"]}, {"lunch" : ["resturent A", "resturent B", "resturent C"]},
+        				  {"dinner" : ["resturent A", "resturent B", "resturent C"]}]
+        },
+        {
+            "date": "2024-05-02",
+            "attraction": ["E", "F", "G", "H"],
+            "resturent": [{"breakfast" : ["resturent A", "resturent B", "resturent C"]}, {"lunch" : ["resturent A", "resturent B", "resturent C"]},
+        				  {"dinner" : ["resturent A", "resturent B", "resturent C"]}]
+        },
+         {
+            "date": "2024-05-03",
+            "attraction": ["E", "F", "G", "H"],
+            "resturent": [{"breakfast" : ["resturent A", "resturent B", "resturent C"]}, {"lunch" : ["resturent A", "resturent B", "resturent C"]},
+        				  {"dinner" : ["resturent A", "resturent B", "resturent C"]}]
+        },
+         {
+            "date": "2024-05-04",
+            "attraction": ["E", "F", "G", "H"],
+            "resturent": [{"breakfast" : ["resturent A", "resturent B", "resturent C"]}, {"lunch" : ["resturent A", "resturent B", "resturent C"]},
+        				  {"dinner" : ["resturent A", "resturent B", "resturent C"]}]
+        },
+         {
+            "date": "2024-05-05",
+            "attraction": ["E", "F", "G", "H"],
+            "resturent": [{"breakfast" : ["resturent A", "resturent B", "resturent C"]}, {"lunch" : ["resturent A", "resturent B", "resturent C"]},
+        				  {"dinner" : ["resturent A", "resturent B", "resturent C"]}]
+        }
+    ]
+}

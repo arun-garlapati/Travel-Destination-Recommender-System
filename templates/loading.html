@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .center {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="loader"></div>
+        <p>Please wait, your request is being processed...</p>
+    </div>
+
+    <script>
+        function checkStatus() {
+            fetch('/loading_page')  // Check the loading_page endpoint
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    }
+                    throw new Error('Network response was not ok.');
+                })
+                .then(html => {
+                    if (typeof html === 'string' && !html.includes("Task is still running")) {
+                        // If the task is no longer running, it means the result is ready or an error occurred
+                        window.location.href = '/itinerary'; // Redirect to the map2 route to display results or handle errors
+                    } else {
+                        console.log("Task is still running, checking again...");
+                    }
+                })
+                .catch(error => console.error('There was a problem with the fetch operation:', error));
+        }
+
+        // Check every 5 seconds
+        setInterval(checkStatus, 5000);
+    </script>
+</body>
+</html>

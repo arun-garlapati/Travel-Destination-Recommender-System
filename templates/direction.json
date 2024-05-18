@@ -1,0 +1,7 @@
+[
+    { "lat": 37.9356467, "lng": 23.9484156, "name": "1", "image": "image1.jpg" },
+    { "lat": 37.9746507, "lng": 23.7219716, "name": "2", "image": "image2.jpg" },
+    { "lat": 37.9759204, "lng": 23.7260321, "name": "3", "image": "image3.jpg" },
+    { "lat": 37.9743749, "lng": 23.7255435, "name": "4", "image": "image4.jpg" },
+    { "lat": 37.9703658, "lng": 23.7278553, "name": "5", "image": "image5.jpg" }
+]

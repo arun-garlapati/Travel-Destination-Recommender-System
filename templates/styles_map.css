@@ -1,0 +1,106 @@
+
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: #e0f5f0;
+        font-family: Poppins, sans-serif;
+        /* overflow: auto; */
+    }
+  /* Define two columns */
+  .column1 {
+    float: left;
+    width: 50%; /* Adjust this width to your preference */
+    padding: 0px;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    /* background-color: aqua; */
+  }
+
+  .column2 {
+    position: fixed;
+    float: left;
+    width: 50%; /* Adjust this width to your preference */
+    padding: 10px;
+    box-sizing: border-box;
+    left: 50%;
+    /* background-color: aquamarine; */
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+.button {
+  /* background-color: black; */
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 20px;
+  /* border: 2px solid white; */
+  cursor: pointer;
+  position: absolute;
+  left: 44%;
+  top: 90%;
+}
+.button:hover {
+  background-color: #f7f0f0;
+  color: black;
+}
+
+
+/* .button1 {
+  display: inline;
+  padding: 10px 30px;
+  margin: 10px;
+  background-color: #acef7f;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+.button1.selected {
+  background-color: #ff0000; /* Change this to your desired selected color */
+
+
+ .button1 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #cbf5ce;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Glow effect */
+  }
+  .button1:hover {
+    background-color: #5bf666; /* Change this to your desired hover color */
+  }
+  .button1.selected {
+    background-color: #6a83fb; /* Change this to your desired selected color */
+  }
+
+
+  
+ .button2 {
+  display: inline-block;
+  padding: 10px 33px;
+  margin: 10px;
+  background-color: #cbf5ce;
+  border: 1px solid;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Glow effect */
+}
+.button2:hover {
+  background-color: #5bf666; /* Change this to your desired hover color */
+}
+.button2.selected {
+  background-color: #6a83fb; /* Change this to your desired selected color */
+}

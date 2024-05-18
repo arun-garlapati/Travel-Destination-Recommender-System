@@ -1,0 +1,52 @@
+[
+  {
+    "address": "2028 County Road 12 Picton Ontario",
+    "amenities": "Free parking,  Free High Speed Internet WiFi,  Children Activities Kid  Family Friendly,  SelfServe Laundry,  Air conditioning",
+    "experience": "Excellent",
+    "name": "West Lake Willows",
+    "rating": 5.0,
+    "location": "50.000678, -86.000977",
+    "price": 116.8443432043,
+    "image": "/static/downloads/West_Lake_Willows/Image_1.jpg"
+  },
+  {
+    "address": "15 Cumberland St Picton Ontario",
+    "amenities": "Free High Speed Internet WiFi,  Air conditioning",
+    "experience": "Excellent",
+    "name": "Bee's Knees BnB & Art Studio",
+    "rating": 5.0,
+    "location": "44.00417375, -77.1371659",
+    "price": 116.8443432043,
+    "image": "/static/downloads/Bee's Knees BnB & Art Studio/Image_1.jpg"
+  },
+  {
+    "address": "430 Cumberland St N Thunder Bay Ontario",
+    "amenities": "Public Wifi,  Air conditioning,  Microwave,  Refrigerator in room,  Kitchenette",
+    "experience": "Average",
+    "name": "Modern Motel",
+    "rating": 4.0,
+    "location": "48.447706, -89.200395",
+    "price": 116.8443432043,
+    "image": "/static/downloads/Modern Motel/Image_1.jpg"
+  },
+  {
+    "address": "490 Stone St S Gananoque Ontario",
+    "amenities": "Restaurant,  Free High Speed Internet WiFi,  Free parking,  BarLounge,  Breakfast included,",
+    "experience": "Excellent",
+    "name": "Stonewater Manor Bed and Breakfast",
+    "rating": 5.0,
+    "location": "44.32601505, -76.1585096",
+    "price": 116.8443432043,
+    "image": "/static/downloads/Stonewater Manor Bed and Breakfast/Image_1.jpg"
+  },
+  {
+    "address": "33 Albert St Ontario",
+    "amenities": "",
+    "experience": "Excellent",
+    "name": "Gypsy by the Lake B&B",
+    "rating": 5.0,
+    "location": "44.3941479, -79.6816146",
+    "price": 116.8443432043,
+    "image": "/static/downloads/Gypsy by the Lake B&B/Image_1.jpg"
+  }
+]

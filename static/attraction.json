@@ -1,0 +1,326 @@
+{
+    "datelist": [
+        "2024-04-30",
+        "2024-05-01",
+        "2024-05-02",
+        "2024-05-03",
+        "2024-05-04",
+        "2024-05-05"
+    ],
+    "date_data": [
+        {
+            "date": "2024-04-30",
+            "timeofday": "30th April, Tuesday",
+            "sequence": 1,
+            "image": "/static/downloads/niagara_falls_day_trip_from_toronto/Image_1.jpg",
+            "name": "Niagara falls day trip from toronto",
+            "location": [
+                43.6561508179,
+                -79.384262085
+            ],
+            "price": 169.0,
+            "rating": 5.0,
+            "category": "featured_tours_and_tickets"
+        },
+        {
+            "date": "2024-04-30",
+            "timeofday": "30th April, Tuesday",
+            "sequence": 2,
+            "image": "/static/downloads/best_of_niagara_falls_tour_from_niagara_falls/Image_1.jpg",
+            "name": "best_of_niagara_falls_tour_from_niagara_falls,_ontario",
+            "location": [
+                43.0857124329,
+                -79.0824279785
+            ],
+            "price": 158.0,
+            "rating": 5.0,
+            "category": "featured_tours_and_tickets"
+        },
+        {   "date": "2024-04-30",
+            "timeofday": "30th April, Tuesday",
+            "sequence": 3,
+            "image": "/static/downloads/niagara_falls_in_one_day:_deluxe_sightseeing_tour_of_american_and_canadian_sides/Image_1.jpg",
+            "name": "niagara_falls_in_one_day:_deluxe_sightseeing_tour_of_american_and_canadian_sides",
+            "location": [
+                43.1024360657,
+                -78.9616394043
+            ],
+            "price": 204.42,
+            "rating": 5.0,
+            "category": "featured_tours_and_tickets"
+        },
+        {   "date": "2024-04-30",
+            "timeofday": "30th April, Tuesday",
+            "sequence": 4,
+            "image": "/static/downloads/ultimate_niagara_falls_tour_plus_helicopter_ride_and_skylon_tower_lunch/Image_1.jpg",
+            "name": "ultimate_niagara_falls_tour_plus_helicopter_ride_and_skylon_tower_lunch",
+            "location": [
+                43.0857124329,
+                -79.0824279785
+            ],
+            "price": 317.42,
+            "rating": 5.0,
+            "category": "featured_tours_and_tickets"
+        },
+        {    "date": "2024-05-01",
+            "timeofday": "1st May, Wednesday",
+            "sequence": 1,
+            "image": "/static/downloads/private_custom-made_niagara_falls_wine/Image_1.jpg",
+            "name": "private_custom-made_niagara_falls_wine,_beer,_and_spirits_tour",
+            "location": [
+                38.8258628845,
+                -76.919593811
+            ],
+            "price": 139.0,
+            "rating": 5.0,
+            "category": "local_experiences"
+        },
+        {   "date": "2024-05-01",
+            "timeofday": "1st May, Wednesday",
+            "sequence": 2,
+            "image": "/static/downloads/niagara_falls_grand_helicopter_tour/Image_1.jpg",
+            "name": "niagara_falls_grand_helicopter_tour",
+            "location": [
+                43.1888389587,
+                -79.1714706421
+            ],
+            "price": 131.5,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-01",
+            "timeofday": "1st May, Wednesday",
+            "sequence": 3,
+            "image": "/static/downloads/niagara_falls_helicopter_tour/Image_1.jpg",
+            "name": "niagara_falls_helicopter_tour",
+            "location": [
+                43.1186027527,
+                -79.0743865967
+            ],
+            "price": 145.0,
+            "rating": 4.5,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-02",
+            "timeofday": "2nd May, Thursday",
+            "sequence": 1,
+            "image": "/static/downloads/7-minute_helicopter_tour_over_toronto/Image_1.jpg",
+            "name": "7-minute_helicopter_tour_over_toronto",
+            "location": [
+                43.632484436,
+                -79.3956604004
+            ],
+            "price": 123.18,
+            "rating": 4.5,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-02",
+            "timeofday": "2nd May, Thursday",
+            "sequence": 2,
+            "image": "/static/downloads/niagara_falls_airplane_tour/Image_1.jpg",
+            "name": "niagara_falls_airplane_tour",
+            "location": [
+                43.1897468567,
+                -79.1701202393
+            ],
+            "price": 129.0,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-02",
+            "timeofday": "2nd May, Thursday",
+            "sequence": 3,
+            "image": "/static/downloads/airliner_adventures_package/Image_1.png",
+            "name": "airliner_adventures_package",
+            "location": [
+                38.8258628845,
+                -76.919593811
+            ],
+            "price": 129.0,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-02",
+            "timeofday": "2nd May, Thursday",
+            "sequence": 4,
+            "image": "/static/downloads/14-minute_helicopter_tour_over_toronto/Image_1.jpg",
+            "name": "14-minute_helicopter_tour_over_toronto",
+            "location": [
+                43.632484436,
+                -79.3956604004
+            ],
+            "price": 258.78,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-02",
+            "timeofday": "2nd May, Thursday",
+            "sequence": 5,
+            "image": "/static/downloads/niagara_winter_wonderland_tour_-_air_tour/Image_1.jpg",
+            "name": "niagara_winter_wonderland_tour_-_air_tour,_winery_tour,_chocolate_factory_tour",
+            "location": [
+                43.1897468567,
+                -79.1701202393
+            ],
+            "price": 144.5,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-03",
+            "timeofday": "3rd May, Friday",
+            "sequence": 1,
+            "image": "/static/downloads/thousand_islands_two_castle_helicopter_tour/Image_1.jpg",
+            "name": "thousand_islands_two_castle_helicopter_tour",
+            "location": [
+                44.3474006653,
+                -76.1751708984
+            ],
+            "price": 265.64,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-03",
+            "timeofday": "3rd May, Friday",
+            "sequence": 2,
+            "image": "/static/downloads/helicopter_ride_over_the_falls_and_sit_down_meal_at_elements_located_on_falls/Image_1.jpg",
+            "name": "helicopter_ride_over_the_falls_and_sit_down_meal_at_elements_located_on_falls",
+            "location": [
+                40.7519760132,
+                -73.9866027832
+            ],
+            "price": 265.84,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-03",
+            "timeofday": "3rd May, Friday",
+            "sequence": 3,
+            "image": "/static/downloads/toronto_aerial_tour_in_luxury_with_a_niagara_falls_winery_tour_and_tasting/Image_1.jpg",
+            "name": "toronto_aerial_tour_in_luxury_with_a_niagara_falls_winery_tour_and_tasting",
+            "location": [
+                56.1303672791,
+                -106.3467712402
+            ],
+            "price": 189.0,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-03",
+            "timeofday": "3rd May, Friday",
+            "sequence": 4,
+            "image": "/static/downloads/air_taxi_and_tour_from_toronto_-_niagara_including_ground_transport_to_niagara_hotels/Image_1.jpg",
+            "name": "air_taxi_and_tour_from_toronto_-_niagara_including_ground_transport_to_niagara_hotels",
+            "location": [
+                43.1897468567,
+                -79.1701202393
+            ],
+            "price": 563.87,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-03",
+            "timeofday": "3rd May, Friday",
+            "sequence": 5,
+            "image": "/static/downloads/exhilarating_120km_aerial_tour_of_toronto/Image_1.png",
+            "name": "exhilarating_120km_aerial_tour_of_toronto",
+            "location": [
+                56.1303672791,
+                -106.3467712402
+            ],
+            "price": 79.0,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-04",
+            "timeofday": "4th May, Saturday",
+            "sequence": 1,
+            "image": "/static/downloads/boldt_castle_and_thousand_islands_helicopter_tour/Image_1.jpg",
+            "name": "boldt_castle_and_thousand_islands_helicopter_tour",
+            "location": [
+                44.3474006653,
+                -76.1751708984
+            ],
+            "price": 172.84,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-04",
+            "timeofday": "4th May, Saturday",
+            "sequence": 2,
+            "image": "/static/downloads/ultimate_thousand_islands_helicopter_tour/Image_1.jpg",
+            "name": "ultimate_thousand_islands_helicopter_tour",
+            "location": [
+                44.3474006653,
+                -76.1751708984
+            ],
+            "price": 522.0,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-04",
+            "timeofday": "4th May, Saturday",
+            "sequence": 3,
+            "image": "/static/downloads/niagara_falls_by_airplane_and_land_winter_tour_with_wine_tasting_from_toronto/Image_1.jpg",
+            "name": "niagara_falls_by_airplane_and_land_winter_tour_with_wine_tasting_from_toronto",
+            "location": [
+                43.1897468567,
+                -79.1701202393
+            ],
+            "price": 339.0,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-04",
+            "timeofday": "4th May, Saturday",
+            "sequence": 4,
+            "image": "/static/downloads/thousand_islands_helicopter_tour/Image_1.jpg",
+            "name": "thousand_islands_helicopter_tour",
+            "location": [
+                44.3474006653,
+                -76.1751708984
+            ],
+            "price": 114.84,
+            "rating": 5.0,
+            "category": "air,_helicopter_&_balloon_tours"
+        },
+        {   "date": "2024-05-04",
+            "timeofday": "4th May, Saturday",
+            "sequence": 5,
+            "image": "/static/downloads/niagara_falls_tour_with_boat_cruise/Image_1.jpg",
+            "name": "niagara_falls_tour_with_boat_cruise,_journey_and_fallsview_lunch_from_toronto",
+            "location": [
+                43.6837425232,
+                -79.5929107666
+            ],
+            "price": 260.0,
+            "rating": 4.5,
+            "category": "cruises,_sailing_&_water_tours"
+        },
+        {   "date": "2024-05-04",
+            "timeofday": "4th May, Saturday",
+            "sequence": 6,
+            "image": "/static/downloads/niagara_falls_canadian_side_tour_and_maid_of_the_mist_boat_ride/Image_1.jpg",
+            "name": "niagara_falls_canadian_side_tour_and_maid_of_the_mist_boat_ride",
+            "location": [
+                43.1024360657,
+                -78.9616394043
+            ],
+            "price": 149.89,
+            "rating": 5.0,
+            "category": "cruises,_sailing_&_water_tours"
+        },
+        {   "date": "2024-05-05",
+            "timeofday": "5th May, Sunday",
+            "sequence": 1,
+            "image": "/static/downloads/niagara_falls_platinum_tour_from_toronto_with_cruise_and_lunch/Image_1.jpg",
+            "name": "niagara_falls_platinum_tour_from_toronto_with_cruise_and_lunch",
+            "location": [
+                38.8258628845,
+                -38.8258628845
+            ],
+            "price": 149.0,
+            "rating": 4.5,
+            "category": "cruises,_sailing_&_water_tours"
+        }
+    ]
+}

@@ -1,0 +1,503 @@
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #e0f5f0;
+    font-family: Poppins, sans-serif;
+  }
+  /* Define two columns */
+  .column1 {
+    float: left;
+    width: 50%; /* Adjust this width to your preference */
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* background-color: aqua; */
+  }
+
+  .column2 {
+    position: fixed;
+    float: left;
+    width: 50%; /* Adjust this width to your preference */
+    padding: 10px;
+    box-sizing: border-box;
+    left: 50%;
+    /* background-color: aquamarine; */
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Custom styles for the blur background */
+  .popup-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Semi-transparent black background */
+    z-index: 998; /* Ensure it appears behind the popup */
+    backdrop-filter: blur(
+      4px
+    ); /* Apply blur effect to the background */
+  }
+
+  /* Custom styles for the popup */
+  #popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.9
+    ); /* Semi-transparent white background */
+    padding: 2rem; /* Increased padding for better visual */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increased box shadow for depth */
+    z-index: 999; /* Ensure it appears above other content */
+    text-align: center; /* Center align text */
+  }
+
+  /* Custom styles for the button */
+  .custom-button {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+  }
+
+  /* Hover effect for the button */
+  .custom-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+
+  /* Custom styles for the paragraph */
+  .popup-text {
+    margin-top: 1rem; /* Add some space between heading and paragraph */
+    line-height: 1.5; /* Increase line height for readability */
+  }
+
+    /* Custom styles for the close button */
+.custom-button {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  color: #333333;
+  font-size: 14px;
+  background-color: #ffffff;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button a {
+  text-decoration: none;
+}
+
+.custom-button:hover,
+.custom-button:focus {
+  background-color: #f0f0f0;
+  border-color: #056dff;
+}
+
+.custom-button:active {
+  background-color: #e0e0e0;
+}
+
+
+
+.zoom-in-on-hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+
+    .side-panel {
+      position: fixed;
+      top: 0;
+      left: -600px; /* Initially hidden off the screen */
+      width: 600px; /* Adjust as needed */
+      height: 100%;
+      background-color: white;
+      transition: left 0.3s ease;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .panel-content {
+      padding: 20px;
+    }
+
+    .max-w-lg {
+      max-width: 32rem;
+    }
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .p-4 {
+      padding: 1rem;
+    }
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+    .font-bold {
+      font-weight: bold;
+    }
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    .relative {
+      position: relative;
+    }
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    .w-full {
+      width: 100%;
+    }
+    .p-2 {
+      padding: 0.5rem;
+    }
+    .border {
+      border-width: 1px;
+      border-style: solid;
+    }
+    .border-zinc-300 {
+      border-color: #d1d5db;
+    }
+    .rounded-md {
+      border-radius: 0.375rem;
+    }
+    .absolute {
+      position: absolute;
+    }
+    .right-2 {
+      right: 0.5rem;
+    }
+    .top-2 {
+      top: 0.5rem;
+    }
+    .text-zinc-500 {
+      color: #9ca3af;
+    }
+    .w-6 {
+      width: 1.5rem;
+    }
+    .h-6 {
+      height: 1.5rem;
+    }
+    .flex {
+      display: flex;
+    }
+    .gap-2 {
+      gap: -0.5rem;
+    }
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .text-sm {
+      font-size: 0.875rem;
+    }
+    .text-green-700 {
+      color: #047857;
+    }
+    .bg-green-100 {
+      background-color: #d1fae5;
+    }
+    .text-zinc-700 {
+      color: #4b5563;
+    }
+    .bg-zinc-100 {
+      background-color: #f3f4f6;
+    }
+    .rounded-full {
+      border-radius: 9999px;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    .text-zinc-600 {
+      color: #6b7280;
+    }
+
+
+#customBtn {
+  display: inline-block;
+  background: white;
+  color: #444;
+  width: 190px;
+  border-radius: 50px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  white-space: nowrap;
+}
+#customBtn:hover {
+  cursor: pointer;
+}
+span.label {
+  font-size: 15px;
+}
+span.icon {
+  background: url("/static/images/newtimg/imagess.png") transparent 5px 50% no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  width: 42px;
+  height: 42px;
+  position: relative;
+  left: 10px;
+}
+
+span.buttonText {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 42px;
+  padding-right: 42px;
+  font-size: 14px;
+}
+icon {
+  width: 50px;
+}
+
+.customGPlusSignIn {
+  position: relative;
+  left: 150px;
+}
+
+.buttonText {
+  position: relative;
+  right: 15px;
+}
+
+
+  .big-arrow {
+    font-size: 3rem; /* Adjust the font size as needed */
+    position: relative;
+    bottom: 5px;
+  }
+  .font{
+    font-size: 22px;
+  }
+
+
+  .box {
+      border: 1px solid #ccc;
+      padding: 1px;
+      margin: 5px;
+      border-radius: 10px;
+      width: 97%;
+      position: relative;
+      bottom: 40px;
+      right: 8px;
+  }
+
+
+.button-box {
+	width: 255px;
+	margin: 35px auto;
+	position: relative;
+	border-radius: 30px;
+	background: #c8f5ed;
+  position: relative;
+  bottom: 40px;
+  right: 300px;
+}
+
+.toggle-btn {
+	padding: 10px 40px;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+	text-align: center;
+}
+
+#btn {
+	left: 0;
+	top: 0;
+	position: absolute;
+	width: 145px;
+	height: 100%;
+	background: #e67e22;
+	border-radius: 30px;
+	transition: .5s;
+}
+
+.box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+
+    /*
+   CSS for the main interaction
+  */
+  .accordion > input[type="checkbox"] {
+    position: absolute;
+    left: -100vw;
+  }
+
+  .accordion .content {
+    overflow-y: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+  }
+
+  .accordion > input[type="checkbox"]:checked ~ .content {
+    height: auto;
+    overflow: visible;
+  }
+
+  .accordion label {
+    display: block;
+  }
+
+  /*
+   Styling
+  */
+  body {
+    font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
+    color: #333;
+    font-weight: 300;
+  }
+
+  .accordion {
+    margin-bottom: 1em;
+  }
+
+  .accordion > input[type="checkbox"]:checked ~ .content {
+    padding: 15px;
+    border: 2px solid #e8e8e8;
+    border-top: 0;
+  }
+
+  .accordion .handle {
+    margin: 0;
+    font-size: 1.125em;
+    line-height: 1.2em;
+  }
+
+  .accordion label {
+    color: #333;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 15px;
+    background: #e0f5f0;
+    border: 1px solid #bbbbbb;
+    border-radius: 10px;
+  }
+
+  .accordion label:hover,
+  .accordion label:focus {
+    background: #d8d8d8;
+  }
+
+  .accordion .handle label:before {
+    font-family: 'fontawesome';
+    content: "\f054";
+    display: inline-block;
+    margin-right: 25px;
+    font-size: .58em;
+    line-height: 1.556em;
+    vertical-align: middle;
+  }
+
+  .accordion > input[type="checkbox"]:checked ~ .handle label:before {
+    content: "\f078";
+  }
+
+
+  /*
+   Demo purposes only
+  */
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+
+  body {
+    padding: 0px;
+  }
+
+  a {
+    color: #06c;
+  }
+
+  p {
+    margin: 0 0 1em;
+  }
+
+  h1 {
+    margin: 0 0 1.5em;
+    font-weight: 600;
+    font-size: 1.5em;
+  }
+
+  .accordion {
+    max-width: 65em;
+  }
+
+  .accordion p:last-child {
+    margin-bottom: 0;
+  }
+
+  .box {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+  }
+
+
+    .box {
+        border: 1px solid #ccc;
+        padding: 1px;
+        margin: 5px;
+        border-radius: 10px;
+        width: 97%;
+        position: relative;
+        bottom: 40px;
+        right: 8px;
+    }
+
+    /* Image add */
+    
+
+    
