@@ -12,7 +12,7 @@ The Travel Destination Recommender System is designed to help users find their p
 - Python 3.11
 - Flask
 - TensorFlow (for machine learning models)
-- MySQL (for database management)
+- SQLite (for database management)
 - Docker (for containerization and deployment)
 
 ## Installation
